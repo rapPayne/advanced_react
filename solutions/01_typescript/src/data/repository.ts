@@ -1,6 +1,6 @@
-import { MenuItem } from "../types/menuItem";
-import { Order } from "../types/order";
-import { User } from "../types/user";
+import { MenuItem } from "../types/MenuItem";
+import { Order } from "../types/Order";
+import { User } from "../types/User";
 
 const baseUrl = `/api`;
 let jwtToken = "";

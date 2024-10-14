@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { getOrderTotal, getNumberOfDiners } from "../data/utilities";
-import { Order } from '../types/order';
-import { User } from '../types/user';
+import { Order } from '../types/Order';
+import { User } from '../types/User';
 import { ReactElement } from 'react';
 interface Props {
   order: Order;

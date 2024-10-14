@@ -2,8 +2,8 @@ import { useState, useEffect, ReactElement } from 'react'
 import { getOrders } from '../data/repository';
 import { OrderSummary } from './OrderSummary.tsx';
 import './Orders.css';
-import { User } from '../types/user';
-import { Order } from '../types/order';
+import { User } from '../types/User.ts';
+import { Order } from '../types/Order.ts';
 
 interface Props {
   user: User | undefined;

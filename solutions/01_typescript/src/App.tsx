@@ -10,9 +10,9 @@ import { Login } from './components/Login.tsx';
 import { Register } from './components/Register.tsx';
 import './site.css';
 import { getNextCartItemId } from './data/utilities.ts';
-import { MenuItem } from './types/menuItem';
+import { MenuItem } from './types/MenuItem.ts';
 import { CartItem } from './types/CartItem.ts';
-import { User } from './types/user';
+import { User } from './types/User.ts';
 
 export function App() {
   const [user, setUser] = useState<User>();

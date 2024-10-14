@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 import { getMenuItems, getOrder } from "../data/repository";
 import { getNumberOfDiners, getOrderTotal, toCurrency } from "../data/utilities";
 import './Order.css';
-import { Order as OrderType } from "../types/order";
-import { MenuItem } from "../types/menuItem";
-import { User } from "../types/user";
+import { Order as OrderType } from "../types/Order";
+import { MenuItem } from "../types/MenuItem";
+import { User } from "../types/User";
 
 interface Props {
   user: User | undefined;
@@ -21,6 +21,7 @@ export const Order = ({ user }: Props): ReactElement => {
     getMenuItems()
       .then(mi => setMenuItems(mi));
   }, [orderId]);
+  user;  // Just there to suppress linter warnings.
 
   return (
     <section className="Order">

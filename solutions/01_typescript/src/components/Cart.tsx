@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { calculateTax, getCartTotal, toCurrency } from '../data/utilities';
 import { placeOrder as placeOrderToServer } from '../data/repository';
 import { CartItem } from '../types/CartItem';
-import { User } from '../types/user';
+import { User } from '../types/User';
 
 interface Props {
   cart: Array<CartItem>;

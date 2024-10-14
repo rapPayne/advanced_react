@@ -1,7 +1,7 @@
 import { CSSProperties, ReactElement, useEffect, useState } from 'react';
 import { getMenuItems } from '../data/repository.ts';
 import { MenuItem } from './MenuItem.tsx';
-import { MenuItem as MenuItemType } from '../types/menuItem.ts';
+import { MenuItem as MenuItemType } from '../types/MenuItem.ts';
 
 interface Props {
   addToCart: (menuItem: MenuItemType) => void;

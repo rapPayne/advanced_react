@@ -2,7 +2,7 @@ import { useState, ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 import { register as registerOnServer } from '../data/authentication';
-import { User } from '../types/user';
+import { User } from '../types/User';
 
 interface Props {
   setUser: (user: User) => void

@@ -4,8 +4,8 @@
 //
 //   const order = Convert.toOrder(json);
 
-import { CreditCard } from "./creditCard.ts";
-import { OrderItem } from "./orderItem.ts";
+import { CreditCard } from "./CreditCard.ts";
+import { OrderItem } from "./OrderItem.ts";
 
 export type Order = {
   id?: number;

@@ -1,5 +1,5 @@
 import { CartItem } from "../types/CartItem";
-import { Order } from "../types/order";
+import { Order } from "../types/Order";
 
 const taxRate = 0.0825;
 

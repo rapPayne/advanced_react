@@ -1,4 +1,4 @@
-import { MenuItem as MenuItemType } from '../types/menuItem';
+import { MenuItem as MenuItemType } from '../types/MenuItem';
 import { toCurrency } from '../data/utilities';
 import { CSSProperties, ReactElement } from 'react';
 
