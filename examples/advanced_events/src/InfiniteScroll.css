@@ -1,0 +1,7 @@
+.InfiniteScroll {
+  #squares {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+}
