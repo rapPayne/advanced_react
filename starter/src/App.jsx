@@ -24,7 +24,7 @@ export function App() {
           <Link to="/cart">Check out</Link>
           <Link to="/orders">Past orders</Link>
           {user ? null : <Link to="/login">Log in</Link>}
-          {user && <Link to="#" onClick={() => setUser({})}>Welcome {user.first} (Log out)</Link>}
+          {user && <Link to="#" onClick={() => setUser(undefined)}>Welcome {user.first} (Log out)</Link>}
         </nav>
       </header>
       <main>
