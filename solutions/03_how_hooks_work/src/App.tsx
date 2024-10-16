@@ -1,4 +1,4 @@
-import { lazy, Suspense, useInsertionEffect, useState } from 'react';
+import { lazy, Suspense, useState } from 'react';
 import { Link, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster, toast } from 'react-hot-toast';
 import { Menu } from './components/Menu.tsx';
@@ -21,9 +21,6 @@ export function App() {
   const [user, setUser] = useState<User>();
   const [cart, setCart] = useState<Array<CartItem>>([]);
 
-  useInsertionEffect(() => {
-    console.log('got here', user, cart)
-  })
   return (
     <>
       <header id="pageHeader">
