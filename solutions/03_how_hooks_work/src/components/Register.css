@@ -1,0 +1,7 @@
+.Register {
+  & dialog {
+    width: 80%;
+    max-width: 500px;
+    backdrop-filter: blur(50px) brightness(0.5);
+  }
+}
