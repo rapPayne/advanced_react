@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
-import { login as loginToServer } from '../data/authentication';
+import { login } from '../data/authentication';
 
 export const Login = ({ setUser }) => {
   const navigate = useNavigate();
@@ -19,12 +19,12 @@ export const Login = ({ setUser }) => {
         <label htmlFor="password">Password</label>
         <input id="password" onChange={e => setPassword(e.target.value)} value={password} />
       </div>
-      <button onClick={login}>Log in</button>
+      <button onClick={handleLogin}>Log in</button>
     </>
   )
 
-  function login() {
-    loginToServer(username, password)
+  function handleLogin() {
+    login(username, password)
       .then(r => (console.log(r), r))
       .then(user => setUser(user))
       .then(() => navigate('/cart'))

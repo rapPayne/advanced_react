@@ -1,7 +1,7 @@
 import { ReactElement, useId, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
-import { login as loginToServer } from '../data/authentication.ts';
+import { login } from '../data/authentication.ts';
 import { User } from '../types/User.ts';
 
 interface Props {
@@ -25,12 +25,12 @@ export const Login = ({ setUser }: Props): ReactElement => {
         <label htmlFor={`password${id}`}>Password</label>
         <input id={`password${id}`} onChange={e => setPassword(e.target.value)} value={password} />
       </div>
-      <button onClick={login}>Log in</button>
+      <button onClick={handleLogin}>Log in</button>
     </>
   )
 
-  function login(): void {
-    loginToServer(username, password)
+  function handleLogin(): void {
+    login(username, password)
       .then(r => (console.log(r), r))
       .then(user => setUser(user))
       .then(() => navigate('/cart'))
