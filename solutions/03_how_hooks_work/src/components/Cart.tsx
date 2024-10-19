@@ -40,7 +40,7 @@ export const Cart = ({ cart, changeCartItem, removeFromCart, user }: Props): Rea
       <section>
         <p>Tax: {toCurrency(calculateTax(getCartTotal(cart)))}</p>
         <p>Total: {toCurrency(getCartTotal(cart) + calculateTax(getCartTotal(cart)))}</p>
-        <div>Tip: <input value={tip} onChange={e => setTip(+e.target.value)} type="number" step="0.01" min="0.00" /></div>
+        <div>Tip: <input value={tip ?? ''} onChange={e => setTip(+e.target.value)} type="number" step="0.01" min="0.00" /></div>
         <p>Amount to charge: {toCurrency(getCartTotal(cart) + calculateTax(getCartTotal(cart)) + (tip || 0))}</p>
       </section>
       <section>
@@ -60,9 +60,9 @@ export const Cart = ({ cart, changeCartItem, removeFromCart, user }: Props): Rea
         </div>
         <div className="formField">
           <label htmlFor="expiryMonth">Month</label>
-          <input value={expiryMonth} onChange={e => setExpiryMonth(+e.target.value)} type="number" id="expiryMonth" required />
+          <input value={expiryMonth ?? ''} onChange={e => setExpiryMonth(+e.target.value)} type="number" id="expiryMonth" required />
           <label htmlFor="expiryYear">Year</label>
-          <input value={expiryYear} onChange={e => setExpiryYear(+e.target.value)} type="number" id="expiryYear" required />
+          <input value={expiryYear ?? ''} onChange={e => setExpiryYear(+e.target.value)} type="number" id="expiryYear" required />
         </div>
         <div className="formField">
           <label htmlFor="cvv">CVV</label>
