@@ -32,8 +32,9 @@ export const Login = ({ setUser }: Props): ReactElement => {
   function handleLogin(): void {
     login(username, password)
       .then(r => (console.log(r), r))
-      .then(user => setUser(user))
-      .then(() => navigate('/cart'))
+      .then(user => (setUser(user), user))
+      .then(user => toast.success(`Welcome ${user?.first}!`))
       .catch(err => toast.error(`Can't log in. ${err.message}`))
   }
+
 }

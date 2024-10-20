@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 import { login } from '../data/authentication';
 
 export const Login = ({ setUser }) => {
-  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   return (
@@ -26,8 +25,8 @@ export const Login = ({ setUser }) => {
   function handleLogin() {
     login(username, password)
       .then(r => (console.log(r), r))
-      .then(user => setUser(user))
-      .then(() => navigate('/cart'))
+      .then(user => (setUser(user), user))
+      .then(user => toast.success(`Welcome ${user?.first}!`))
       .catch(err => toast.error(`Can't log in. ${err.message}`))
   }
 }
