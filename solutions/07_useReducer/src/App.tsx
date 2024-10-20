@@ -1,5 +1,5 @@
 import { lazy, createContext, Suspense, useState } from 'react';
-import { Link, Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster, toast } from 'react-hot-toast';
 import { Menu } from './components/Menu.tsx';
 import { Cart } from './components/Cart.tsx';
@@ -14,6 +14,7 @@ import { MenuItem } from './types/MenuItem.ts';
 import { CartItem } from './types/CartItem.ts';
 import { User } from './types/User.ts';
 import { Loading } from './components/Loading.tsx';
+import { NavBar } from './components/NavBar.tsx';
 
 const Orders = lazy(() => import('./components/Orders.tsx'));
 export const UserContext = createContext<User | undefined>(undefined);
@@ -26,14 +27,7 @@ export function App() {
     <UserContext.Provider value={user}>
       <header id="pageHeader">
         <Toaster position="top-right" reverseOrder={true} />
-        <nav>
-          <Link to="/">Dinner and a movie</Link>
-          <Link to="/register">Register</Link>
-          <Link to="/cart">Check out</Link>
-          <Link to="/orders">Past orders</Link>
-          {user ? null : <Link to="/login">Log in</Link>}
-          {user && <Link to="#" onClick={() => setUser(undefined)}>Welcome {user.first} (Log out)</Link>}
-        </nav>
+        <NavBar user={user} setUser={setUser} />
       </header>
       <main>
         <Suspense fallback={<Loading />}>

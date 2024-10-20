@@ -13,6 +13,7 @@ import { getNextCartItemId } from './data/utilities.ts';
 import { MenuItem } from './types/MenuItem.ts';
 import { CartItem } from './types/CartItem.ts';
 import { User } from './types/User.ts';
+import { NavBar } from './components/NavBar.tsx';
 
 export function App() {
   const [user, setUser] = useState<User>();
@@ -21,14 +22,7 @@ export function App() {
     <>
       <header id="pageHeader">
         <Toaster position="top-right" reverseOrder={true} />
-        <nav>
-          <Link to="/">Dinner and a movie</Link>
-          <Link to="/register">Register</Link>
-          <Link to="/cart">Check out</Link>
-          <Link to="/orders">Past orders</Link>
-          {user ? null : <Link to="/login">Log in</Link>}
-          {user && <Link to="#" onClick={() => setUser(undefined)}>Welcome {user.first} (Log out)</Link>}
-        </nav>
+        <NavBar user={user} setUser={setUser} />
       </header>
       <main>
         <Routes>

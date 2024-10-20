@@ -10,6 +10,7 @@ import { Login } from './components/Login';
 import { Register } from './components/Register';
 import './site.css';
 import { getNextCartItemId } from './data/utilities';
+import { NavBar } from './components/NavBar';
 
 export function App() {
   const [cart, setCart] = useState([]);
@@ -18,14 +19,7 @@ export function App() {
     <>
       <header id="pageHeader">
         <Toaster position="top-right" reverseOrder={true} />
-        <nav>
-          <Link to="/">Dinner and a movie</Link>
-          <Link to="/register">Register</Link>
-          <Link to="/cart">Check out</Link>
-          <Link to="/orders">Past orders</Link>
-          {user ? null : <Link to="/login">Log in</Link>}
-          {user && <Link to="#" onClick={() => setUser(undefined)}>Welcome {user.first} (Log out)</Link>}
-        </nav>
+        <NavBar user={user} setUser={setUser} />
       </header>
       <main>
         <Routes>
