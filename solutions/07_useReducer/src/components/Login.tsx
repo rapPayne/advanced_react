@@ -9,7 +9,6 @@ interface Props {
 }
 export const Login = ({ setUser }: Props): ReactElement => {
   const id = useId();
-  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
