@@ -19,7 +19,7 @@ import { NavBar } from './components/NavBar.tsx';
 const Orders = lazy(() => import('./components/Orders.tsx'));
 
 export function App() {
-  const [user, setUser] = useState<User>();
+  const [user, setUser] = useState<User | undefined>();
   const [cart, setCart] = useState<Array<CartItem>>([]);
 
   return (

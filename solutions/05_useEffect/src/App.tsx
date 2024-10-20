@@ -22,7 +22,7 @@ export const UserContext = createContext<User | undefined>(undefined);
 export function App() {
 
 
-  const [user, setUser] = useState<User>();
+  const [user, setUser] = useState<User | undefined>();
   const [cart, setCart] = useState<Array<CartItem>>([]);
 
   useEffect(() => console.log(`A ${Math.random()}`))

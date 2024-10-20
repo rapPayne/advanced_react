@@ -16,7 +16,7 @@ import { User } from './types/User.ts';
 import { NavBar } from './components/NavBar.tsx';
 
 export function App() {
-  const [user, setUser] = useState<User>();
+  const [user, setUser] = useState<User | undefined>();
   const [cart, setCart] = useState<Array<CartItem>>([]);
   return (
     <>
