@@ -1,0 +1,88 @@
+:root {
+  --dark1: #2E4052;
+  --dark2: #412234;
+  --dark3: #FFC857;
+  --light1: #FFFFFF;
+  --light2: #BDD9BF;
+  --dangerDark: red;
+  --dangerLite: pink;
+  --successDark: green;
+  --successLite: lightgreen;
+
+  color: var(--dark1);
+  background-color: var(--light1);
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button {
+  padding: 13px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  color: var(--light1);
+  background-color: var(--dark3);
+  border: none;
+}
+
+label {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+input,
+textarea,
+select {
+  display: block;
+  width: calc(100% - 10px);
+  font-size: 1.1em;
+  line-height: 1.5em;
+}
+
+#pageHeader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+#pageHeader nav {
+  display: flex;
+  background-color: var(--dark2);
+}
+
+#pageHeader nav a {
+  color: var(--light1);
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px;
+  text-transform: uppercase;
+}
+
+main {
+  padding-top: 50px;
+  /* so it doesn't scroll behind the fixed menu */
+}
+
+main> :nth-child(1) {
+  flex: 1 1 67%;
+}
+
+main> :nth-child(2) {
+  flex: 1 1 33%;
+}
+
+/* Put this on a div that encloses a form <input> and it'll color based on validity */
+.formField {
+  padding: 5px;
+  color: var(--successDark);
+  background: var(--successLite);
+}
+
+.formField:has(input:invalid) {
+  color: var(--dangerDark);
+  background: var(--dangerLite);
+
+  &::before {
+    content: "*";
+  }
+}
