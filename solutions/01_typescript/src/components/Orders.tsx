@@ -37,3 +37,4 @@ export const Orders = ({ user }: Props): ReactElement => {
   )
 }
 
+export default Orders;

@@ -51,3 +51,5 @@ export const Order = ({ user }: Props): ReactElement => {
     return menuItems?.find(mi => mi.id === id)
   }
 }
+
+export default Order;

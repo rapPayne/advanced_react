@@ -45,3 +45,5 @@ export const Order = ({ user }) => {
     return menuItems?.find(mi => mi.id === id)
   }
 }
+
+export default Order;
