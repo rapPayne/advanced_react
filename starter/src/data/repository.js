@@ -76,7 +76,7 @@ export const login = (username, password) => {
 /**
  * Registers a user with our system
  * @param {user} User The user to be registered
- * @returns {user} The new registered user
+ * @returns {Promise<User>} The new registered user
  */
 export const register = (user) => {
   const url = `${baseUrl}/register`;
