@@ -5,7 +5,7 @@ export const MenuItem = ({ menuItem, addToCart }) => {
   return (
     <section style={styles.itemCard}>
       <div>
-        <img src={menuItem.imageURL} alt={menuItem.name} style={styles.image} />
+        <img src={menuItem.imageUrl} alt={menuItem.name} style={styles.image} />
       </div>
       <div className="menuDetails">
         <h2 style={styles.itemName}>{menuItem.name}</h2>

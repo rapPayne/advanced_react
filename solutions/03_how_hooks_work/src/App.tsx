@@ -48,7 +48,7 @@ export function App() {
     const cartItem: CartItem = {
       ...menuItem,
       category: menuItem.category ?? "",
-      imageURL: menuItem.imageURL ?? "",
+      imageUrl: menuItem.imageUrl ?? "",
       name: menuItem.name ?? "",
       price: menuItem.price ?? 0,
       itemId: menuItem.id ?? 0,

@@ -11,7 +11,7 @@ export const Register = ({ setUser }) => {
   const [last, setLast] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  const [imageURL, setImageURL] = useState("");
+  const [imageUrl, setimageUrl] = useState("");
   const [pan, setPan] = useState("");
   const [expiryMonth, setExpiryMonth] = useState("");
   const [expiryYear, setExpiryYear] = useState("");
@@ -51,8 +51,8 @@ export const Register = ({ setUser }) => {
       </div>
 
       <div>
-        <label htmlFor={`imageUrl`}>ImageUrl</label>
-        <input id={`imageUrl`} onChange={e => setImageURL(e.target.value)} value={imageURL} />
+        <label htmlFor={`imageUrl`}>imageUrl</label>
+        <input id={`imageUrl`} onChange={e => setimageUrl(e.target.value)} value={imageUrl} />
       </div>
 
       <div>
@@ -76,7 +76,7 @@ export const Register = ({ setUser }) => {
   )
 
   function register() {
-    const user = { username, password, first, last, phone, email, imageUrl: imageURL, creditCard: { pan, expiryMonth: +expiryMonth, expiryYear: +expiryYear } }
+    const user = { username, password, first, last, phone, email, imageUrl: imageUrl, creditCard: { pan, expiryMonth: +expiryMonth, expiryYear: +expiryYear } }
     registerOnServer(user)
       .then(user => setUser(user))
       .then(() => toast.success(`New user was created`))

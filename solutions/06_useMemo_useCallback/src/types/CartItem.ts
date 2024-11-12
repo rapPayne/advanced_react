@@ -4,7 +4,7 @@ export type CartItem = {
   name: string,
   category: string,
   price: number,
-  imageURL: string,
+  imageUrl: string,
   firstName?: string,  // Diner's name
   notes?: string,  // Special instructions
 }

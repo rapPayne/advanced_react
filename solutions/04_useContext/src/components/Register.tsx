@@ -18,7 +18,7 @@ export const Register = ({ setUser }: Props): ReactElement => {
   const [last, setLast] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
   const [email, setEmail] = useState<string>("");
-  const [imageURL, setImageURL] = useState<string>("");
+  const [imageUrl, setimageUrl] = useState<string>("");
   const [pan, setPan] = useState<string>("");
   const [expiryMonth, setExpiryMonth] = useState<string>("");
   const [expiryYear, setExpiryYear] = useState<string>("");
@@ -58,8 +58,8 @@ export const Register = ({ setUser }: Props): ReactElement => {
       </div>
 
       <div>
-        <label htmlFor={`imageUrl${id}`}>ImageUrl</label>
-        <input id={`imageUrl${id}`} onChange={e => setImageURL(e.target.value)} value={imageURL} />
+        <label htmlFor={`imageUrl${id}`}>imageUrl</label>
+        <input id={`imageUrl${id}`} onChange={e => setimageUrl(e.target.value)} value={imageUrl} />
       </div>
 
       <div>
@@ -106,7 +106,7 @@ export const Register = ({ setUser }: Props): ReactElement => {
   )
 
   function register() {
-    const user: User = { username, password, first, last, phone, email, imageURL, creditCard: { pan, expiryMonth: +expiryMonth, expiryYear: +expiryYear } }
+    const user: User = { username, password, first, last, phone, email, imageUrl, creditCard: { pan, expiryMonth: +expiryMonth, expiryYear: +expiryYear } }
     registerOnServer(user)
       .then(user => setUser(user))
       .then(() => toast.success(`New user was created`))

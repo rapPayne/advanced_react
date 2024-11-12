@@ -12,7 +12,7 @@ export type User = {
   last?: string;
   phone?: string;
   email?: string;
-  imageURL?: string;
+  imageUrl?: string;
   creditCard?: CreditCard;
   adminUser?: boolean;
   isServer?: boolean;
